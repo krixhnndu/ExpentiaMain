@@ -2,7 +2,7 @@ const API_URL = "http://127.0.0.1:5000";
 
 // ✅ Check if user is logged in (on page load)
 window.onload = function () {
-    fetch(`${API_URL}/me`, { credentials: "include" })
+    fetch(`https://expentiafinal.onrender.com/me`, { credentials: "include" })
         .then(response => response.json())
         .then(data => {
             if (data.logged_in) {
@@ -24,7 +24,7 @@ function login() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    fetch(`${API_URL}/login`, {
+    fetch(`https://expentiafinal.onrender.com/login`, {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -43,7 +43,7 @@ function login() {
 
 // ✅ Logout Function
 function logout() {
-    fetch(`${API_URL}/logout`, {
+    fetch(`https://expentiafinal.onrender.com/logout`, {
         method: "POST",
         credentials: "include"
     })
@@ -63,7 +63,7 @@ function addExpense() {
     const description = document.getElementById("description").value;
     const date = document.getElementById("date").value;
 
-    fetch(`${API_URL}/expenses`, {
+    fetch(`https://expentiafinal.onrender.com/expenses`, {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -79,7 +79,7 @@ function addExpense() {
 
 // ✅ Fetch and Display Expenses
 function getExpenses() {
-    fetch(`${API_URL}/expenses`, { credentials: "include" })
+    fetch(`https://expentiafinal.onrender.com/expenses`, { credentials: "include" })
     .then(response => response.json())
     .then(expenses => {
         const expenseList = document.getElementById("expense-list");
